@@ -34,7 +34,7 @@ body {
 }
 
 .logo {
-  width: 320px;       /* Tamaño más chico */
+  width: 250px;       /* Tamaño más chico */
   max-width: 85vw;    /* Se adapta en pantallas pequeñas */
 }
 

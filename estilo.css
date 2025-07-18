@@ -67,7 +67,7 @@ body {
 
 .popup-button {
   color: #ffffff;
-  background: linear-gradient(113.27deg, #d824ff 15.04%, rgb(0 255 24 / 50%) 84.96%);
+  background: linear-gradient(113.27deg, #ffb224 15.04%, rgba(0, 0, 0, 0.8) 84.96%);
   font-family: 'Jugabet', 'Bebas Neue', sans-serif;
   font-size: 22px;
   padding: 18px 30px;

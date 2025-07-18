@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1296495108773963');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1296495108773963&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PistachoGames</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <div class="logo-wrapper">
+    <img class="logo" src="img/logo-nobg.png" alt="Logo">
+  </div>
+
+  <div class="card">
+    <div class="main-text">
+      <p class="typing">🔥ESCRIBI TU NOMBRE Y CREA TU USUARIO🔥</p>
+      <p><span class="dorado-neon">BONO DE BIENVENIDA</span></p>
+    </div>
+
+    <input type="text" id="nombreUsuario" placeholder="PAGOS ILIMITADOS" class="nombre-input" />
+
+    <button class="popup-button" id="whatsappButton">
+      <span>¡CREA TU USUARIO!</span>
+      <img src="img/WhatsApp.svg-2.webp" alt="Whatsapp">
+    </button>
+  </div>
+
+  <div class="barra-juegos-slider">
+    <div class="scroll-content">
+      <img src="img/game.pragmaticPlayGatesOfOlympus.thumbnail.512x512_v4.png" alt="Slots">
+      <img src="img/game.pragmaticPlayGoldParty.thumbnail.512x512_v3.png" alt="Ruleta">
+      <img src="img/game.pragmaticPlayJokersJewels.thumbnail.512x512_v3.png" alt="Cartas">
+      <img src="img/game.pragmaticPlaySweetBonanza.thumbnail.512x512_v4.png" alt="Deportes">
+      <img src="img/game.pragmaticPlayCongoCash.thumbnail.512x512_v3.png" alt="Jackpot">
+      <img src="img/game.mg9MasksOfFire.thumbnail.512x512_v3.png" alt="Slots">
+      <img src="img/game.pragmaticPlayGatesOfOlympus.thumbnail.512x512_v4.png" alt="Ruleta">
+      <img src="img/game.pragmaticPlayJokersJewels.thumbnail.512x512_v3.png" alt="Cartas">
+      <img src="img/game.pragmaticPlaySweetBonanza.thumbnail.512x512_v4.png" alt="Deportes">
+      <img src="img/game.pragmaticPlayCongoCash.thumbnail.512x512_v3.png" alt="Jackpot">
+    </div>
+  </div>
+  
+  <div class="info-externa">
+      <p>🔥🎁¡CARGAS Y RETIROS ILIMITADOS LAS 24HS! 🎁🔥 </p>
+    <p>RULETA EN VIVO - SLOTS - APUESTAS</p>
+  </div>
+
+  <div class="metodos-pago">
+    <h2 class="titulo-pago">MÉTODOS DE PAGO</h2>
+    <div class="iconos-pago">
+      <img src="img/8043680.png" alt="Mastercard">
+      <img src="img/Mercado Pago.png" alt="MercadoPago">
+      <img src="img/logo-large.png" alt="Rapipago">
+      <img src="img/logo-cuenta-dni.png" alt="Pago Fácil">
+    
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+    <!-- Script de rotación global cada 5 min + rotación por recarga en la misma ventana -->
+    <script>
+      ;(function(){
+        const numbers   = [
+          '5491176293867',
+          '5491171960509',
+          '5491176193825',
+          '5491133171845'
+        ];
+        const windowMs    = 5 * 60 * 1000;              // 5 minutos en ms
+        const now         = Date.now();
+        const windowStart = Math.floor(now / windowMs) * windowMs;
+
+        // Resetear contador local si cambió la ventana de 5 min
+        const lastWindow = parseInt(localStorage.getItem('lastWindow') || '0', 10);
+        if (lastWindow !== windowStart) {
+          localStorage.setItem('lastWindow', windowStart);
+          localStorage.setItem('visitCount', '0');
+        }
+
+        // Contador de recargas en esta misma ventana
+        let visitCount = parseInt(localStorage.getItem('visitCount') || '0', 10);
+
+        // Índice base según tiempo global (cambia cada 5 min)
+        const baseIdx = Math.floor(now / windowMs) % numbers.length;
+
+        // Índice final para este visitante
+        const idx = (baseIdx + visitCount) % numbers.length;
+
+        // Obtengo el número rotado
+        const rotatedNumber = numbers[idx];
+
+        // Incremento el contador local para la próxima recarga
+        localStorage.setItem('visitCount', (visitCount + 1).toString());
+
+        // Seteo el click handler usando el número rotado
+        document.getElementById("whatsappButton").addEventListener("click", function () {
+          const nombre = document.getElementById("nombreUsuario").value.trim();
+          const mensaje = nombre
+            ? `Hola, quiero mas información. Mi nombre es ${nombre}.`
+            : "Hola, quiero mas información y Reclamar mi bonificacion.";
+          window.open(
+            `https://wa.me/${rotatedNumber}?text=${encodeURIComponent(mensaje)}`,
+            "_blank"
+          );
+          if (typeof fbq === "function") {
+            fbq('track', 'Subscribe');
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
